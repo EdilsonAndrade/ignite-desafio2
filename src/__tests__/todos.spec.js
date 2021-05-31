@@ -167,7 +167,7 @@ describe('Todos', () => {
         name: 'John Doe',
         username: 'user5'
       });
-
+    
     const todoDate = new Date();
 
     const todo1Response = await request(app)
@@ -177,7 +177,8 @@ describe('Todos', () => {
         deadline: todoDate
       })
       .set('username', userResponse.body.username);
-
+   
+    
     await request(app)
       .delete(`/todos/${todo1Response.body.id}`)
       .set('username', userResponse.body.username)
